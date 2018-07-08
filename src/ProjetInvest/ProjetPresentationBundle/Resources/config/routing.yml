@@ -1,0 +1,15 @@
+presentation_home:
+    path: /{page}
+    defaults: 
+      _controller: ProjetInvestProjetPresentationBundle:Presentation:index
+      page: 1
+    requirements:
+      page: \d*
+
+presentation_project:
+    path: /project/{id}
+    defaults:
+      _controller: ProjetInvestProjetPresentationBundle:Presentation:project
+    requirements:
+      id: \d+
+

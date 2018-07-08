@@ -1,0 +1,4 @@
+projet_invest_core_home:
+    path:     /
+    defaults: { _controller: ProjetInvestCoreBundle:Core:index }
+

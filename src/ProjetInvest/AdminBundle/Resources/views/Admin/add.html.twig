@@ -1,0 +1,21 @@
+{% extends "ProjetInvestAdminBundle::layout.html.twig" %}
+
+{% block title %}
+	Ajouter un projet
+{% endblock %}
+
+{% block h1 %}
+	Ajouter un projet
+{% endblock %}
+
+{% block admin_body %}
+	
+	{{ include("ProjetInvestAdminBundle:Admin:form.html.twig") }}
+
+	<p>
+		<a href="#" class="btn btn-default">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			Retour au projet
+		</a>
+	</p>
+{% endblock %}

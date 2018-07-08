@@ -1,0 +1,24 @@
+{% extends "ProjetInvestCoreBundle::layout.html.twig" %}
+
+{% block title %}
+	Page d'administration
+{% endblock %}
+
+{% block h1 %}
+	Page d'administration
+{% endblock %}
+
+{% block menu %}
+	<li><a href="{{ path('projet_invest_admin_home') }}">Page Admin</a></li>
+	<li><a href="{{ path('projet_invest_addproject') }}">Nouveau Projet</a></li>
+{% endblock %}
+
+
+{% block body %}
+	
+
+	<hr>
+
+	{% block admin_body %}
+	{% endblock %}
+{% endblock %}

@@ -1,0 +1,15 @@
+projet_invest_admin_home:
+    path:     /
+    defaults: { _controller: ProjetInvestAdminBundle:Admin:index }
+
+projet_invest_addproject:
+    path: /add_project
+    defaults: {_controller: ProjetInvestAdminBundle:Admin:addproject }
+
+projet_invest_view:
+    path: /view_project/{id}
+    defaults: {_controller: ProjetInvestAdminBundle:Admin:view }
+
+projet_invest_edit:
+    path: /edit_project
+    defaults: {_controller: ProjetInvestAdminBundle:Admin:edit }

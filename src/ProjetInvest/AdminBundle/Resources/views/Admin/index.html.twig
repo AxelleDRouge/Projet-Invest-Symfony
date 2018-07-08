@@ -1,0 +1,24 @@
+{% extends "ProjetInvestAdminBundle::layout.html.twig" %}
+
+{% block admin_body %}
+<div class="container">
+		<table class="table">
+			<thead>
+    			<tr>
+      				<th scope="col">Projet</th>
+      				<th scope="col">Description</th>
+      				<th scope="col">Auteur</th>
+      			</tr>
+  			</thead>
+		{% for project in listProjects %}
+  			<tbody>
+    			<tr>
+      				<th scope="row">{{ project.titre }}</th>
+      				<td>{{ project.description }}</td>
+      				<td>{{ project.auteur }}</td>
+  				</tr>
+  			</tbody>
+     	{% endfor %}
+		</table>
+</div>
+{% endblock %}

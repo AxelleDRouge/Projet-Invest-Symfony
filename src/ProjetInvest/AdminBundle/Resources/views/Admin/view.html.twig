@@ -1,0 +1,23 @@
+{% extends "ProjetInvestAdminBundle::layout.html.twig" %}
+
+{% block admin_body %}
+	
+  <h2>{{ project.titre }}</h2>
+  <i>Le {{ project.dateCreation|date('d/m/Y') }}</i>
+
+  <div class="well">
+    {% if project.image is not null %}
+      <img src="{{ project.image.url }}" alt="{{ project.image.alt }}">
+    {% endif %}
+    {{ project.description }}
+    }
+  </div>
+
+  <p>
+    <a href="{{ path('projet_invest_admin_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la page d'accueil
+    </a>
+  </p>
+
+{% endblock %}

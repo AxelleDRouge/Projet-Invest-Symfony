@@ -1,0 +1,38 @@
+{% extends "ProjetInvestProjetPresentationBundle::layout.html.twig" %}
+
+{% block title %}
+  Lecture d'un projet - {{ parent() }}
+{% endblock %}
+
+{% block presentation_body %}
+
+  <h2>{{ project.titre }}</h2>
+  <i>Le {{ project.dateCreation|date('d/m/Y') }}</i>
+
+  <div class="well">
+    Description : {{ project.description }}<br \>
+    {% if is_granted("ROLE_INVESTOR") %}
+      <span>Montant espéré : {{ project.budgettarget }}<br /></span>
+      {% for donation in listDonations %}
+        <span> Dons déjà enregistrés : {{ donation.donation }}<br /></span>
+      {% endfor %}
+    {% endif %}
+      <img src="{{ project.image ? project.image.url }}" alt="{{ project.image ? project.image.alt }}" width="50%" height="50%">
+  </div>
+
+  <p>
+    <a href="{{ path('presentation_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste
+    </a>
+  </p>
+
+{% if is_granted("ROLE_INVESTOR") %}
+  <h3>Soutenir ce projet</h3>
+
+  <div class="well">
+    {{ form(form) }}
+  </div>
+{% endif %}
+
+{% endblock %}

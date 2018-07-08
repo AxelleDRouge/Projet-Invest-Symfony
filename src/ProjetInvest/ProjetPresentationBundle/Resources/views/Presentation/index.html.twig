@@ -1,0 +1,25 @@
+{% extends "ProjetInvestProjetPresentationBundle::layout.html.twig" %}
+
+{% block title %}
+  {{ parent() }} - Présentation des projets 
+{% endblock %}
+
+{% block presentation_body %}
+
+  <h2>Liste des projets</h2>
+
+  <ul>
+    {% for project in listProjects %}
+      <li>
+        <a href="{{ path('presentation_project', {'id': project.id}) }}">
+          {{ project.titre }}
+        </a>
+        par {{ project.auteur }},
+        le {{ project.dateCreation|date('d/m/Y') }}
+      </li>
+    {% else %}
+      <li>Pas (encore !) de projets</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    projetinvest_projetpresentation.example:
+#        class: ProjetInvest\ProjetPresentationBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

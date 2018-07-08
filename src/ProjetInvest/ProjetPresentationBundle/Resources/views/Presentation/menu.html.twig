@@ -1,0 +1,9 @@
+<ul class="nav nav-pills nav-stacked">
+	{% for project in listProjects %}
+	<li>
+		<a href="{{ path('presentation_project', {'id': project.id}) }}">
+			{{ project.titre }}
+		</a><br />
+	</li>
+	{% endfor %}
+</ul>

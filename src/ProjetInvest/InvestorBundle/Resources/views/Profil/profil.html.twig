@@ -1,0 +1,46 @@
+{% extends "ProjetInvestCoreBundle::layout.html.twig" %}
+
+{% block title %}
+	Page Profil Investisseur
+{% endblock %}
+
+{% block h1 %}
+	Page Profil Investisseur
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				Nom : {{ investor.lastname }}
+			</div>
+			<div class="col">
+				Prénom : {{ investor.firstname }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				User : {{ investor.username }}
+			</div>
+			<div class="col">
+				Adresse Email : {{ investor.email }}
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+    			<tr>
+      				<th scope="col">Projet</th>
+      				<th scope="col">Montant investi</th>
+      			</tr>
+  			</thead>
+		{% for donation in listDonations %}
+  			<tbody>
+    			<tr>
+      				<th scope="row">{{ donation.project.titre }}</th>
+      				<td>{{ donation.donation }}</td>
+  				</tr>
+  			</tbody>
+     	{% endfor %}
+		</table>
+	</div>
+{% endblock %}
